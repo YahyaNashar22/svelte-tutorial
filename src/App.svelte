@@ -1,7 +1,9 @@
 <script>
   let title = "Svelte";
+  let color = "blue";
 </script>
 
+<h1 style:color>Inline Style</h1>
 <h1>{title}</h1>
 
 <input type="text" bind:value={title} placeholder="Change title" />
