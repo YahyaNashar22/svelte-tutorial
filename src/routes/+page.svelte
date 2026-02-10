@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Header from './Header.svelte';
+	import Form from './form.svelte';
 
 	let name = $state('Yahya');
 
@@ -23,3 +24,5 @@
 <button onclick={toggle}>Toggle Status</button>
 
 <h2>{full_name}</h2>
+
+<Form />
