@@ -2,6 +2,7 @@
 	import Header from './Header.svelte';
 	import Form from './form.svelte';
 	import ColorPicker from './colorPicker.svelte';
+	import { createState, CustomState } from './state.svelte';
 
 	let name = $state('Yahya');
 
@@ -14,6 +15,9 @@
 	function onclick() {
 		status = status === 'OPEN' ? 'CLOSED' : 'OPEN';
 	}
+
+	const myState = createState();
+	const myState2 = new CustomState();
 </script>
 
 <Header {name} {color} />
@@ -29,3 +33,7 @@
 <ColorPicker />
 
 <Form />
+
+<button onclick={myState.up}>{myState.value}</button>
+<button onclick={() => myState2.up()}>{myState2.value}</button>
+<button onclick={() => myState2.set(30)}>{myState2.value}</button>
