@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Header from './Header.svelte';
 	import Form from './form.svelte';
+	import ColorPicker from './colorPicker.svelte';
 
 	let name = $state('Yahya');
 
@@ -10,7 +11,7 @@
 
 	let full_name = $derived(name + ' ' + 'is black');
 
-	function toggle() {
+	function onclick() {
 		status = status === 'OPEN' ? 'CLOSED' : 'OPEN';
 	}
 </script>
@@ -21,8 +22,10 @@
 
 <p>The store is now {status}</p>
 
-<button onclick={toggle}>Toggle Status</button>
+<button {onclick}>Toggle Status</button>
 
 <h2>{full_name}</h2>
+
+<ColorPicker />
 
 <Form />

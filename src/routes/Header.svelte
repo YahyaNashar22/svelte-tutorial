@@ -4,6 +4,8 @@
 
 <h1 style="color: {color}">Hello From {name}</h1>
 
+<input bind:value={name} />
+
 {#if fake_name}
 	<p>{fake_name}</p>
 {/if}
