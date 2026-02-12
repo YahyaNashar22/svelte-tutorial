@@ -1,6 +1,7 @@
 <script lang="ts">
 	let counter = $state(1);
 	const messages = ['Hi', 'Hello', 'Yo', 'Sup', 'Welcome'];
+	import { CustomState } from '../state.svelte';
 
 	const randomMessage = $derived.by(() => {
 		// reruns only when counter changes
@@ -36,12 +37,16 @@
 			console.log('Before rerun', counter);
 		};
 	});
+
+	const customState = new CustomState();
 </script>
 
 <svelte:window on:keydown={reset} />
 
 <main>
 	<div>
+		<button onclick={() => customState.up()}>{customState.value}</button>
+
 		<h1>{counter}</h1>
 		<p>{randomMessage}</p>
 		<button onclick={increment}>increment</button>

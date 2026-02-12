@@ -20,5 +20,7 @@
 	:global(body) {
 		margin: 0;
 		padding: 0;
+		background-color: #121212;
+		color: orangered;
 	}
 </style>
