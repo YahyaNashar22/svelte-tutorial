@@ -7,10 +7,12 @@
 	let image = $state('');
 
 	async function getPokemon(pokemon: string) {
+		console.log('here');
 		const baseUrl = 'https://pokeapi.co/api/v2/pokemon';
 		const response = await fetch(`${baseUrl}/${pokemon}`, {
 			signal: getAbortSignal()
 		});
+		console.log(response);
 		if (!response.ok) throw new Error('Oops!');
 		return response.json();
 	}
@@ -26,7 +28,11 @@
 	<h1>Pokemon API</h1>
 	<input type="search" placeholder="enter pokemon name" bind:value={pokemon} />
 	<img src={image} alt={pokemon} />
-	<button onclick={() => globalState.toggleTheme()}>{globalState.theme}</button>
+	<button
+		onclick={() => {
+			globalState.toggleTheme();
+		}}>{globalState.theme}</button
+	>
 	<button aria-label="gsap" onclick={() => goto('/gsap')}>gsap</button>
 
 	<!-- async await syntax in html  -->

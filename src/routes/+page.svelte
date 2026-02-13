@@ -21,6 +21,13 @@
 	const myState2 = new CustomState();
 
 	let transitionKey = $state(0);
+
+	function toSpongeBobCase(text: string) {
+		return text
+			.split('')
+			.map((c, i) => (i % 2 === 1 ? c.toUpperCase() : c.toLowerCase()))
+			.join('');
+	}
 </script>
 
 <Header {name} {color} />
@@ -48,3 +55,6 @@
 	<div style={`font-size: ${fontSize}`} in:fade>👻</div>
 {/key}
 <button onclick={() => transitionKey++}>fade</button>
+
+<!-- function binding -->
+<textarea bind:value={() => toSpongeBobCase(name), (v) => (name = toSpongeBobCase(v))}></textarea>

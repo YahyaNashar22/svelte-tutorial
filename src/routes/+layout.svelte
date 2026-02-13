@@ -21,6 +21,17 @@
 		margin: 0;
 		padding: 0;
 		background-color: #121212;
-		color: orangered;
+		color: whitesmoke;
+	}
+
+	:global(button) {
+		background-color: orangered;
+		font-size: 1.2rem;
+		color: white;
+
+		border: none;
+		outline: none;
+		padding: 12px 24px;
+		border-radius: 8px;
 	}
 </style>
