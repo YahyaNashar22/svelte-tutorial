@@ -71,4 +71,8 @@
 	h4 {
 		color: brown;
 	}
+
+	p {
+		color: darkorchid;
+	}
 </style>
