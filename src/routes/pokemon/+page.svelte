@@ -28,4 +28,13 @@
 	<img src={image} alt={pokemon} />
 	<button onclick={() => globalState.toggleTheme()}>{globalState.theme}</button>
 	<button aria-label="gsap" onclick={() => goto('/gsap')}>gsap</button>
+
+	<!-- async await syntax in html  -->
+	{#await getPokemon(pokemon)}
+		<p>awaiting pokemon . . .</p>
+	{:then pokemon}
+		<img src={image} alt={pokemon} />
+	{:catch error}
+		<p>{error.message}</p>
+	{/await}
 </main>
